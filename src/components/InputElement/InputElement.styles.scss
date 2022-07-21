@@ -1,0 +1,23 @@
+@import "../../styles/index";
+
+.input-element {
+  
+  @include shape('rounded-border');
+  @include type;
+  height: 40px;
+  width: 50%;
+  transition: width 2s;
+  border: 1.5px solid $color-theme;
+  
+  transition-delay:100ms;
+  transition-property: width;
+
+  
+  
+
+  padding: 0 16px;
+
+  &:hover, &:focus{
+    width: 100%;
+  }
+}

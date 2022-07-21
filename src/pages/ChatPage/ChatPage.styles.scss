@@ -1,0 +1,72 @@
+@import "../../styles/index";
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.chat-page {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100vh;
+  width: calc(100% - #{2 * $size-wrapper-margin});
+  margin: 0 auto;
+  animation: fadeIn 2s 1;
+
+  &__title {
+    @include type($font-size: 2.4rem, $font-weight: 700);
+    flex: 0 0 auto;
+    padding: 24px 0;
+    margin-bottom: 50px;
+    text-align: center;
+    background-color:$color-theme;
+    border-radius: 5%;
+    border: 3px;
+    font-family: "lato";
+  }
+
+  &__join{
+
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size:50px ;
+    font-family: "lato";
+
+    &--text{
+      color:$color-theme;
+      
+      animation: fade 10s infinite;
+    }
+  }
+  &__message-list {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    
+  }
+
+  &__message-list-item {
+    margin-bottom: 8px;
+    
+      animation: fadeIn 1s 1;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+
+  &__form {
+    flex: 0 0 auto;
+    margin: 16px 0;
+  }
+}
