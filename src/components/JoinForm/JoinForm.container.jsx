@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { JoinForm as Component } from "./JoinForm.component";
 
-export function JoinForm(props) {
-  const [state, setState] = useState({ displayName: '' });
+export function JoinForm(props)
+{
+  
+  const [state, setState] = useState({ displayName: '',genre:"" });
 
   const submitForm = (event) => {
     event.preventDefault();
@@ -14,6 +16,7 @@ export function JoinForm(props) {
       ...state,
       [event.target.name]: event.target.value
     }));
+    ;
   }
 
   return (
