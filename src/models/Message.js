@@ -19,7 +19,7 @@ export class Message {
       createdAt: dataObject.createdAt,
       user: User.fromObject(dataObject.user),
     });
-
+  
     return message;
   }
 }

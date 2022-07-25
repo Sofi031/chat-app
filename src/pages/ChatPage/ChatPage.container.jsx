@@ -12,7 +12,7 @@ export function ChatPage() {
   const [drone, setDrone] = useState(null);
   const [error, setError] = useState(null);
   const [joinedRoom, setJoinedRoom] = useState(false);
-  console.log(user);
+  
 
   const sendMessage = (formState) => {
     const message = new MessageModel({
@@ -32,7 +32,7 @@ export function ChatPage() {
     if (drone !== null) return;
     setDrone(new window.Scaledrone('0qmn0gapd5CMKKeM'));
   }, [drone, setDrone]);
-
+  
   useEffect(() => {
     if (drone === null) return;
 
@@ -46,7 +46,8 @@ export function ChatPage() {
     });
   
     room.on('message', message => {
-      console.log('Message received', message);
+      console.log('Message received', message.data);
+      
 
       setState((state) => [
         ...state,
